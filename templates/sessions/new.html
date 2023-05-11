@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}    
+<h1><a href="/products">GenderBender</a></h1>
+<h1>Log in</h1>
+<form action="/sessions" method = "POST">
+    <label for="">Email</label>
+    <input type="text" name="email">
+
+    <label for="">Password</label>
+    <input type="password" name="password">
+
+    <button>Log in</button>
+</form>
+
+<p>Don't have an account? <a href="/users/new">Sign Up</a></p>
+
+{% endblock %}   

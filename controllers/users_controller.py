@@ -1,7 +1,13 @@
-from flask import Blueprint
-from controllers.users_controller import new, create
+from flask import render_template, request, redirect
+from models.user import create_user
 
-users_routes = Blueprint('users_routes', __name__)
+def new():
+    return render_template('users/new.html')
 
-users_routes.route('/new')(new)
-users_routes.route('', methods=['POST'])(create)
+def create():
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
+    email = request.form.get('email')
+    password = request.form.get('password')
+    create_user(first_name, last_name, email, password)
+    return redirect('/')

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %} 
+<h1><a href="/products">GenderBender</a></h1>
+    {% if current_user %}
+        <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
+
+        <section class="controls">
+            <form action="/sessions/delete" method="POST">
+                <button>Log out</button>
+            </form>
+        </section>
+    {% endif %}
+{% endblock %}   

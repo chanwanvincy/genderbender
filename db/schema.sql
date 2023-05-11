@@ -18,3 +18,21 @@ CREATE TABLE users (
     email TEXT,
     password_digest TEXT
 );
+
+CREATE TABLE reviews (
+    id SERIAL PRIMARY KEY,
+    -- from hidden post
+    product_id TEXT,
+    -- from hidden post
+    user_id TEXT,
+    review TEXT
+);
+
+CREATE TABLE suggests (
+    id SERIAL PRIMARY KEY,
+    user_id TEXT,
+    product_name TEXT,
+    product_url TEXT
+)
+
+-- is combination of product_id and user_id connected to an existing review id? (users can only submit 1 review per product)

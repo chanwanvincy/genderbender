@@ -1,12 +1,13 @@
 from flask import render_template, request, redirect
 from models.product import all_products, get_product, create_product, update_product, delete_product
+from services.session_info import current_user
 
 def index():
     products = all_products()
-    return render_template('products/index.html', products = products)
+    return render_template('products/index.html', products = products, current_user=current_user())
 
 def new():
-    return render_template('products/new.html')
+    return render_template('products/new.html', current_user=current_user())
 
 def create():
     product_name = request.form.get('product_name')
@@ -17,7 +18,7 @@ def create():
 
 def edit(id):
     product = get_product(id)
-    return render_template('products/edit.html', product=product)
+    return render_template('products/edit.html', product=product, current_user=current_user())
 
 def update(id):
     product_name = request.form.get('product_name')
@@ -29,3 +30,6 @@ def update(id):
 def delete(id):
     delete_product(id)
     return redirect('/')
+
+def suggest():
+    return render_template('/products/suggest.html', current_user=current_user())
