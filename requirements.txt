@@ -1,0 +1,9 @@
+flask
+psycopg2
+psycopg2-binary
+bcrypt
+python-dotenv
+requests
+gunicorn
+
+# pip install -r requirements.txt

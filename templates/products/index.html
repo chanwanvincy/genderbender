@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>GenderBender</h1>
+
+<section class="products">
+    {% for product in products: %}
+    <section class="product">
+        <img src="{{  product['image_url']  }}" alt="">
+
+        <h2>{{ product['name'] }}</h2>
+
+        <section class="controls">
+            <form action="/products/{{ product['id'] }}/edit">
+                <button>Edit</button>
+            </form>
+            <form action="/products/{{ product['id'] }}/delete">
+                <button>Delete</button>
+            </form>
+        </section>
+        {% endfor %}
+    </section>
+</section>
+
+{% endblock %}
