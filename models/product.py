@@ -1,7 +1,7 @@
 from db.db import sql
 
 def all_products():
-    return sql('SELECT * FROM products ORDER DESC')
+    return sql('SELECT * FROM products')
     # returns all results with most recent changes made
 
 def get_product(id):

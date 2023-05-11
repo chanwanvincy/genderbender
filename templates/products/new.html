@@ -1,4 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>hello</h1>
+    <h1><a href="/products">GenderBender</a></h1>
+    <h1>Add a new product</h1>
+    <form action="/products" method = "POST">
+        <label for="">Product Name:</label>
+        <input type="text" name="product_name">
+
+        <label for="">Brand:</label>
+        <input type="text" name="brand">
+    
+        <label for="">Image URL:</label>
+        <input type="text" name="image_url">
+    
+        <button>Add product</button>
+    </form>
+
 {% endblock %}

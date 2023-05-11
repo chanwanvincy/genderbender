@@ -8,7 +8,8 @@
     <section class="product">
         <img src="{{  product['image_url']  }}" alt="">
 
-        <h2>{{ product['name'] }}</h2>
+        <h2>{{ product['product_name'] }}</h2>
+        <h3>{{ product['brand'] }}</h3>
 
         <section class="controls">
             <form action="/products/{{ product['id'] }}/edit">
