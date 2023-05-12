@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, session
-from models.product import all_products, get_product, create_product, update_product, delete_product, create_review, get_reviews, create_update, get_review, delete_review, create_suggest
+from models.product import all_products, get_product, create_product, update_product, delete_product, create_review, number_of_entries, get_reviews, create_update, get_review, delete_review, create_suggest
 from services.session_info import current_user
 
 def index():
@@ -40,7 +40,9 @@ def post_review(id):
     product_id = id
     user_id = session['user_id']
     review = request.form.get('review')
-    create_review(product_id, user_id, review)
+    print(number_of_entries(product_id, user_id))
+    if number_of_entries(product_id, user_id) == 0:
+        create_review(product_id, user_id, review)
     # redirect on a POST request
     return redirect(f'/products/{product_id}/reviews')
     

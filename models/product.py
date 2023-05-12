@@ -20,6 +20,10 @@ def delete_product(id):
 def create_review(product_id, user_id, review):
     sql('INSERT INTO reviews (product_id, user_id, review) VALUES (%s, %s, %s) RETURNING *', [product_id, user_id, review])
 
+def number_of_entries(product_id, user_id):
+    number_of_entries = sql('SELECT COUNT(*) FROM reviews WHERE product_id=1 AND user_id=1 ;', [product_id, user_id])
+    return number_of_entries
+
 def get_review(product_id, user_id):
     review = sql('SELECT review FROM reviews WHERE product_id=%s AND user_id=%s', [product_id, user_id])
     return review[0]['review']

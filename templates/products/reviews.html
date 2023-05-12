@@ -25,8 +25,9 @@
     {% if current_user %}
         <section class="controls">
             <form action="/products/{{ product['id'] }}/reviews/post" method="POST">
-                <input type="text" name="review">    
-                <!-- <textarea maxlength="1000" name="review"></textarea> -->
+                <!-- <input type="text" name="review">     -->
+                <label for="review">Write your review:</label>
+                <textarea maxlength="1000" name="review"></textarea>
                 <button>Post Review</button>
             </form>
         </section>
