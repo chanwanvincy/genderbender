@@ -1,5 +1,5 @@
-from flask import render_template, request, redirect
-from models.product import all_products, get_product, create_product, update_product, delete_product
+from flask import render_template, request, redirect, session
+from models.product import all_products, get_product, create_product, update_product, delete_product, create_review, get_reviews
 from services.session_info import current_user
 
 def index():
@@ -33,7 +33,16 @@ def delete(id):
 
 def reviews(id):
     product = get_product(id)
-    return render_template('/products/reviews.html', product=product, current_user=current_user())
+    reviews = get_reviews(id)
+    return render_template('/products/reviews.html', product=product, current_user=current_user(), reviews=reviews)
+
+def post_review():
+    product_id = request.form.get('product_id')
+    user_id = session['user_id']
+    review = request.form.get('review')
+    create_review(product_id, user_id, review)
+    return render_template('/products/reviews.html')
+    
 
 def suggest():
     return render_template('/products/suggest.html', current_user=current_user())

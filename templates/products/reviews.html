@@ -21,11 +21,17 @@
     <h3>{{ product['brand'] }}</h3>
     {% if current_user %}
         <section class="controls">
-            <form action="/products/{{ product['id'] }}/edit">
-                <button>Edit</button>
-            </form>
-            <form action="/products/{{ product['id'] }}/delete">
-                <button>Delete</button>
+            <form action="/products/{{ product['id'] }}/reviews/post" method="POST">
+                <input type="hidden" name="product_id" value="{{ product['id'] }}">
+                <input type="text" name="review">    
+                <!-- <textarea maxlength="1000" name="review"></textarea> -->
+                <button>Post Review</button>
             </form>
         </section>
-        {% endif %}
+    {% endif %}
+
+<section class="reviews">
+    {% for review in reviews %}
+        <p>{{ review['review'] }}</p>
+    {% endfor %}
+</section>

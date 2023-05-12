@@ -21,9 +21,7 @@ CREATE TABLE users (
 
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
-    -- from hidden post
     product_id TEXT,
-    -- from hidden post
     user_id TEXT,
     review TEXT
 );
@@ -33,6 +31,9 @@ CREATE TABLE suggests (
     user_id TEXT,
     product_name TEXT,
     product_url TEXT
-)
+);
+
+INSERT INTO reviews(product_id, user_id, review) VALUES
+    ('1', '1', 'My first review');
 
 -- is combination of product_id and user_id connected to an existing review id? (users can only submit 1 review per product)
