@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1><a href="/products">GenderBender</a></h1>
+
+    {% if current_user %}
+        <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
+
+        <section class="controls">
+            <form action="/sessions/delete" method="POST">
+                <button>Log out</button>
+            </form>
+        </section>
+
+    {% else %}
+        <a href="/users/new">Sign up</a>
+        <a href="/sessions/new">Log in</a>
+    {% endif %}
+    <h1>Edit Review</h1>
+    <form action="/products/{{ product['id'] }}/update_review" method = "POST">
+        <label for="">Review:</label>
+        <input type="text" name="review" value="{{ review }}">
+    
+        <button>Update review</button>
+
+{% endblock %}

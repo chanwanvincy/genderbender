@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+
 <h1><a href="/products">GenderBender</a></h1>
 
 {% if current_user %}
@@ -22,7 +25,6 @@
     {% if current_user %}
         <section class="controls">
             <form action="/products/{{ product['id'] }}/reviews/post" method="POST">
-                <input type="hidden" name="product_id" value="{{ product['id'] }}">
                 <input type="text" name="review">    
                 <!-- <textarea maxlength="1000" name="review"></textarea> -->
                 <button>Post Review</button>
@@ -33,5 +35,15 @@
 <section class="reviews">
     {% for review in reviews %}
         <p>{{ review['review'] }}</p>
+        {% if current_user['id'] == review['user_id'] %}
+            <form action="/products/{{ product['id'] }}/edit_review" method="POST">
+                <button>Edit</button>
+            </form>
+            <form action="/products/{{ product['id'] }}/delete_review"method="POST">
+                <button>Delete</button>
+            </form>
+        {% endif %}
     {% endfor %}
 </section>
+
+{% endblock %}

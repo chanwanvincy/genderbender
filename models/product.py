@@ -20,6 +20,19 @@ def delete_product(id):
 def create_review(product_id, user_id, review):
     sql('INSERT INTO reviews (product_id, user_id, review) VALUES (%s, %s, %s) RETURNING *', [product_id, user_id, review])
 
+def get_review(product_id, user_id):
+    review = sql('SELECT review FROM reviews WHERE product_id=%s AND user_id=%s', [product_id, user_id])
+    return review[0]['review']
+
+def create_update(product_id, user_id, review):
+    sql('UPDATE reviews SET review=%s WHERE product_id=%s AND user_id=%s RETURNING *', [review, product_id, user_id])
+
 def get_reviews(product_id):
     reviews = sql('SELECT * FROM reviews WHERE product_id=%s', [product_id])
     return reviews
+
+def delete_review(product_id, user_id):
+    sql('DELETE FROM reviews WHERE product_id=%s AND user_id=%s RETURNING *', [product_id, user_id])
+
+def create_suggest(product_name, brand, product_url):
+    sql('INSERT INTO suggests(product_name, brand, product_url) VALUES (%s, %s, %s) RETURNING *', [product_name, brand, product_url])

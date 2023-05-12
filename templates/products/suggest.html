@@ -9,7 +9,19 @@
                 <button>Log out</button>
             </form>
         </section>
-    
-        
     {% endif %}
+
+    <h1>Add a suggestion</h1>
+    <form action="/products/suggest" method="POST">
+        <label for="">Product Name:</label>
+        <input type="text" name="product_name">
+
+        <label for="">Brand:</label>
+        <input type="text" name="brand">
+    
+        <label for="">Product URL:</label>
+        <input type="text" name="product_url">
+    
+        <button>Send</button>
+    </form>
 {% endblock %}   
