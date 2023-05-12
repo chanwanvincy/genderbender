@@ -20,20 +20,25 @@
 <section class="products">
     {% for product in products: %}
     <section class="product">
-        <img src="{{  product['image_url']  }}" alt="">
+        <a href="products/{{ product['id'] }}/reviews"><img src="{{  product['image_url']  }}" alt=""></a>
 
-        <h2>{{ product['product_name'] }}</h2>
+        <h2><a href="products/{{ product['id'] }}/reviews">{{ product['product_name'] }}</a></h2>
         <h3>{{ product['brand'] }}</h3>
-        {% if current_user %}
+        
             <section class="controls">
-                <form action="/products/{{ product['id'] }}/edit">
-                    <button>Edit</button>
-                </form>
-                <form action="/products/{{ product['id'] }}/delete">
-                    <button>Delete</button>
-                </form>
+                {% if current_user %}
+                    <!-- <form action="/products/{{ product['id'] }}/edit">
+                        <button>Edit</button>
+                    </form>
+                    <form action="/products/{{ product['id'] }}/delete">
+                        <button>Delete</button>
+                    </form> -->
+                    <a href="products/{{ product['id'] }}/reviews">Review</a>
+                {% else %}
+                <a href="products/{{ product['id'] }}/reviews">Read Reviews</a>
+                {% endif %}
             </section>
-        {% endif %}
+        
         {% endfor %}
     </section>
     {% if current_user %}

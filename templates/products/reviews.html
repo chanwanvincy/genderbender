@@ -1,0 +1,31 @@
+<h1><a href="/products">GenderBender</a></h1>
+
+{% if current_user %}
+    <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
+
+    <section class="controls">
+        <form action="/sessions/delete" method="POST">
+            <button>Log out</button>
+        </form>
+    </section>
+
+{% else %}
+    <a href="/users/new">Sign up</a>
+    <a href="/sessions/new">Log in</a>
+{% endif %}
+
+<section class="product">
+    <img src="{{  product['image_url']  }}" alt="">
+
+    <h2>{{ product['product_name'] }}</h2>
+    <h3>{{ product['brand'] }}</h3>
+    {% if current_user %}
+        <section class="controls">
+            <form action="/products/{{ product['id'] }}/edit">
+                <button>Edit</button>
+            </form>
+            <form action="/products/{{ product['id'] }}/delete">
+                <button>Delete</button>
+            </form>
+        </section>
+        {% endif %}

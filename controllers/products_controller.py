@@ -31,5 +31,9 @@ def delete(id):
     delete_product(id)
     return redirect('/')
 
+def reviews(id):
+    product = get_product(id)
+    return render_template('/products/reviews.html', product=product, current_user=current_user())
+
 def suggest():
     return render_template('/products/suggest.html', current_user=current_user())
