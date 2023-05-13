@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}    
-<h1><a href="/products">GenderBender</a></h1>
+<a href="/products"><img src="/Images/genderbender-logo.png" alt="" id="logo"></a>
+
 <h1>Sign Up</h1>
-<form action="/users" method = "POST">
+<form action="/users" method = "POST" class="signup-login-form">
     <label for="">First Name:</label>
     <input type="text" name="first_name">
 

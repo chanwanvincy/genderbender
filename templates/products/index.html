@@ -1,50 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1><a href="/products">GenderBender</a></h1>
+<a href="/products"><img src= "" alt="Logo"></a>
 
 {% if current_user %}
     <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
 
     <section class="controls">
         <form action="/sessions/delete" method="POST">
-            <button>Log out</button>
+            <button id="log-out-button">Log out</button>
         </form>
     </section>
 
 {% else %}
-    <a href="/users/new">Sign up</a>
-    <a href="/sessions/new">Log in</a>
+    <a href="/users/new" id="sign-up-button">Sign up</a>
+    <a href="/sessions/new" id="log-in-button">Log in</a>
 {% endif %}
 
 <section class="products">
+    
     {% for product in products: %}
-    <section class="product">
-        <a href="products/{{ product['id'] }}/reviews"><img src="{{  product['image_url']  }}" alt=""></a>
+        <section class="product">
+            <a href="products/{{ product['id'] }}/reviews"><img src="{{  product['image_url']  }}" alt="" class="gallery-thumbnail"></a>
 
-        <h2><a href="products/{{ product['id'] }}/reviews">{{ product['product_name'] }}</a></h2>
-        <h3>{{ product['brand'] }}</h3>
-        
-            <section class="controls">
-                {% if current_user %}
-                    <!-- <form action="/products/{{ product['id'] }}/edit">
-                        <button>Edit</button>
-                    </form>
-                    <form action="/products/{{ product['id'] }}/delete">
-                        <button>Delete</button>
-                    </form> -->
-                    <a href="products/{{ product['id'] }}/reviews">Review</a>
-                {% else %}
-                <a href="products/{{ product['id'] }}/reviews">Read Reviews</a>
-                {% endif %}
-            </section>
-        
-        {% endfor %}
-    </section>
+            <h2><a href="products/{{ product['id'] }}/reviews">{{ product['product_name'] }}</a></h2>
+            <h3>{{ product['brand'] }}</h3>
+            
+                <section class="controls">
+                    {% if current_user %}
+                        <!-- <form action="/products/{{ product['id'] }}/edit">
+                            <button>Edit</button>
+                        </form>
+                        <form action="/products/{{ product['id'] }}/delete">
+                            <button>Delete</button>
+                        </form> -->
+                        <a href="products/{{ product['id'] }}/reviews" id="review-button">Review</a>
+                    {% else %}
+                    <a href="products/{{ product['id'] }}/reviews"id="review-button">Read Reviews</a>
+                    {% endif %}
+                </section>
+        </section>    
+    {% endfor %}
+    
     {% if current_user %}
-        <p>Don't see the product you're trying to review? <a href="/products/suggest">Add Your Suggestion.</a>
+        <section class="add-suggest">
+            <p>Don't see the product you're trying to review?</p><a href="/products/suggest">Add Your Suggestion.</a>
+        </section>
     {% endif %}
-    </p>
+    
 </section>
 
 {% endblock %}
