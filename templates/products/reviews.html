@@ -2,6 +2,7 @@
 
 {% block head %}
     <title>Reviews - {{ product['product_name'] }} - GenderBender</title>
+    <link rel="stylesheet" href="/static/css/review.css">
 {% endblock %}
 
 {% block content %}
@@ -49,9 +50,7 @@
                     <button id="delete-review-button">Delete</button>
                 </form>
             </section>
-                
-                
-            {% endif %}
+        {% endif %}
         {% endfor %}
     </section>
 

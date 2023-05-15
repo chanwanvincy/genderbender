@@ -1,0 +1,60 @@
+body {
+    max-width: fit-content;
+    margin: 2rem auto;
+}
+
+#signup-login {
+    max-width: fit-content;
+}
+
+#logo {
+    height: 70px;
+    width: 200px;
+    object-fit: cover;
+}
+
+form {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 18rem;
+    max-width: 20rem;
+}
+
+form > label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: #0e2c54;
+    margin-top: 0.5rem;
+}
+
+form > input {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 1.5rem;
+    border: 2px solid #0e2c54;    
+}
+
+form > input:focus {
+    outline: none;
+    border: 2px solid #ff6cc0; 
+}
+
+form > button {
+    width: fit-content;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 1rem;
+    color: #0e2c54;
+    background-color: #ffbd59;
+    padding: 0.5rem 0.75rem;
+    box-shadow: none;
+    border: 0;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}

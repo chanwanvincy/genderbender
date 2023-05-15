@@ -1,13 +1,15 @@
 {% block head %}
     <title>Sign Up - GenderBender</title>
+    <link rel="stylesheet" href="/static/css/form.css">
 {% endblock %}
 
 {% extends 'base.html' %}
-{% block content %}    
-    <a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="signup-login-logo"></a>
+{% block content %}
+<section class="signup-login">
+    <a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="logo"></a>
 
     <h1>Sign Up</h1>
-    <form action="/users" method = "POST" class="signup-login-form">
+    <form action="/users" method = "POST">
         <label for="">First Name</label>
         <input type="text" name="first_name">
 
@@ -21,8 +23,11 @@
         <input type="password" name="password">
 
         <button>Sign Up</button>
-    </form>
 
-    <p>Already a user? <a href="/sessions/new">Log in</a></p>
+        <p>Already a user? <a href="/sessions/new">Log in</a></p>
+    </form>
+</section>    
+    
+    
 
 {% endblock %}   

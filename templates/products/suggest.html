@@ -2,18 +2,19 @@
 
 {% block head %}
     <title>Suggest a Product - GenderBender</title>
+    <link rel="stylesheet" href="/static/css/form.css">
 {% endblock %}
 
 {% block content %}
 
-<a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="suggest-logo"></a>
+<a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="logo"></a>
 
     {% if current_user %}
         <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
 
         <section class="controls">
             <form action="/sessions/delete" method="POST" >
-                <button>Log out</button>
+                <button id="log-out-button">Log out</button>
             </form>
         </section>
     {% endif %}

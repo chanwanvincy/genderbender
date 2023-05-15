@@ -6,22 +6,26 @@
 {% block content %}
 
 <section class="homepage-content">
-    <a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="logo"></a>
-
-    {% if current_user %}
-        <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
-    
-        <section class="controls">
-            <form action="/sessions/delete" method="POST">
-                <button id="log-out-button">Log out</button>
-            </form>
+    <section class="nav">
+        <section class="nav-left">
+            <a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="logo"></a>
         </section>
-    
-    {% else %}
-        <a href="/users/new" class="button" id="sign-up-button">Sign up</a>
-        <a href="/sessions/new" class="button" id="log-in-button">Log in</a>
-    {% endif %}
-    
+        <section class="nav-right">
+            {% if current_user %}
+                <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
+            
+                <form action="/sessions/delete" method="POST">
+                        <button id="log-out-button">Log out</button>
+                </form>
+
+            {% else %}
+                <a href="/users/new" class="button" id="sign-up-button">Sign up</a>
+                <a href="/sessions/new" class="button" id="log-in-button">Log in</a>
+            {% endif %}
+        </section>
+        
+        
+    </section>
     
     <section class="products">
         
