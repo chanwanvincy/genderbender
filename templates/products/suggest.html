@@ -1,18 +1,28 @@
 {% extends 'base.html' %}
-{% block content %} 
-<a href="/products"><img src="/Images/genderbender-logo.png" alt="" id="logo"></a>
+
+{% block head %}
+    <title>Suggest a Product - GenderBender</title>
+{% endblock %}
+
+{% block content %}
+
+<a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="suggest-logo"></a>
+
     {% if current_user %}
         <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
 
         <section class="controls">
-            <form action="/sessions/delete" method="POST">
+            <form action="/sessions/delete" method="POST" >
                 <button>Log out</button>
             </form>
         </section>
     {% endif %}
 
     <h1>Add a suggestion</h1>
-    <form action="/products/suggest" method="POST">
+    
+    <form action="/products/suggest" method="POST" class="suggest-form">
+        <p>There are a lot of products out there we don't know about. Add your suggestion and we will update our database!</p>
+
         <label for="">Product Name:</label>
         <input type="text" name="product_name">
 
@@ -22,6 +32,6 @@
         <label for="">Product URL:</label>
         <input type="text" name="product_url">
     
-        <button>Send</button>
+        <button>Add your suggestion</button>
     </form>
 {% endblock %}   

@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
+
+{% block head %}
+    <title>Reviews - {{ product['product_name'] }} - GenderBender</title>
+{% endblock %}
+
 {% block content %}
 
-<a href="/products"><img src="/Images/genderbender-logo.png" alt="" id="logo"></a>
+<a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="logo"></a>
 
 {% if current_user %}
     <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
@@ -26,8 +31,8 @@
             <section class="controls">
                 <form action="/products/{{ product['id'] }}/reviews/post" method="POST" class="write-review-form">
                     <!-- <input type="text" name="review">     -->
-                    <label for="review">Write your review:</label>
-                    <textarea maxlength="1000" name="review"></textarea>
+                    <label for="new_review">Write your review:</label>
+                    <textarea maxlength="1000" name="new_review"></textarea>
                     <button>Post Review</button>
                 </form>
             </section>
@@ -38,11 +43,12 @@
             <p>{{ review['review'] }}</p>
             {% if current_user['id'] == review['user_id'] %}
                 <form action="/products/{{ product['id'] }}/edit_review" method="POST">
-                    <button>Edit</button>
+                    <button id="edit-review-button">Edit</button>
                 </form>
                 <form action="/products/{{ product['id'] }}/delete_review"method="POST">
-                    <button>Delete</button>
+                    <button id="delete-review-button">Delete</button>
                 </form>
+                
             {% endif %}
         {% endfor %}
     </section>

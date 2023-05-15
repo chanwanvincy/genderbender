@@ -1,24 +1,28 @@
+{% block head %}
+    <title>Sign Up - GenderBender</title>
+{% endblock %}
+
 {% extends 'base.html' %}
 {% block content %}    
-<a href="/products"><img src="/Images/genderbender-logo.png" alt="" id="logo"></a>
+    <a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="signup-login-logo"></a>
 
-<h1>Sign Up</h1>
-<form action="/users" method = "POST" class="signup-login-form">
-    <label for="">First Name:</label>
-    <input type="text" name="first_name">
+    <h1>Sign Up</h1>
+    <form action="/users" method = "POST" class="signup-login-form">
+        <label for="">First Name</label>
+        <input type="text" name="first_name">
 
-    <label for="">Last Name:</label>
-    <input type="text" name="last_name">
+        <label for="">Last Name</label>
+        <input type="text" name="last_name">
 
-    <label for="">Email</label>
-    <input type="text" name="email">
+        <label for="">Email</label>
+        <input type="text" name="email">
 
-    <label for="">Password</label>
-    <input type="password" name="password">
+        <label for="">Password</label>
+        <input type="password" name="password">
 
-    <button>Sign Up</button>
-</form>
+        <button>Sign Up</button>
+    </form>
 
-<p>Already a user? <a href="/sessions/new">Log in</a></p>
+    <p>Already a user? <a href="/sessions/new">Log in</a></p>
 
 {% endblock %}   

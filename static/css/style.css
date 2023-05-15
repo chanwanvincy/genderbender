@@ -3,14 +3,17 @@
 
 * {
     box-sizing: border-box;
+    border: 1px dashed #ff6cc0;
 }
 
 body {
     font-family: 'Raleway', sans-serif;
-    margin: 2rem 10rem;
+    margin: 2rem 2rem;
+    justify-content: center;
 }
 
 a {
+    color:#0e2c54;
     cursor: pointer;
 }
 
@@ -21,6 +24,11 @@ a:visited {
 a:hover {
     color: #ff6cc0;
 }
+h1 {
+    font-weight: 800;
+    color: #0e2c54;
+}
+
 
 h2 {
     font-weight: 700;
@@ -31,19 +39,30 @@ h2 {
 h3 {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    line-height: 0.25 rem;
+    font-size: 1rem;
 }
 
 p
+
+.button, button {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1.5rem;
+    margin: auto 0.25rem;
+    cursor: pointer;
+}
 
 #sign-up-button {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     text-decoration: none;
     padding: 0.5rem 0.75rem;
-    border: 2px solid #0e2c54;
     border-radius: 1.5rem;
     margin: auto 0.25rem;
+    cursor: pointer;
+    border: 2px solid #0e2c54;
     color: #0e2c54;
     background-color: #ffbd59;
 }
@@ -53,18 +72,36 @@ p
     font-weight: 600;
     text-decoration: none;
     padding: 0.5rem 0.75rem;
-    border: 2px solid #0e2c54;
     border-radius: 1.5rem;
     margin: auto 0.25rem;
+    cursor: pointer;
+    border: 2px solid #0e2c54;
     color: #FFFFFF;
     background-color: #0e2c54;
 }
 
-
+#log-out-button {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #ff6cc0;
+    border-radius: 1.5rem;
+    margin: auto 0.25rem;
+    color: #FFFFFF;
+    background-color: #ff6cc0;
+    cursor: pointer;
+}
 
 /* landing page */
-.add-suggest {
-    display: block;
+.homepage-content {
+    max-width: 1200px;
+}
+
+#logo {
+    height: 70px;
+    width: 200px;
+    object-fit: cover;
 }
 
 .products {
@@ -76,7 +113,7 @@ p
 
 .gallery-thumbnail {
     width: 100%;
-    height: 350px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -88,16 +125,47 @@ p
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     text-decoration: none;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     color: #0e2c54;
     background-color: #ffbd59;
     padding: 0.5rem 0.75rem;
     border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.add-suggest {
+    display: block;
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+#add-suggest-button {
+    width: fit-content;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 1rem;
+    color: #FFFFFF;
+    background-color: #ff6cc0;
+    padding: 0.5rem 0.75rem;
+    box-shadow: none;
+    border: 0;
+    border-radius: 1.5rem;
+    cursor: pointer;
 }
 
 /* sign-up & log-in page */
+
+#signup-login-logo {
+    height: 70px;
+    width: 200px;
+    object-fit: cover;
+}
+
 .signup-login-form {
     display: flex;
+    width: fit-content;
     flex-direction: column;
     gap: 0.5rem;
     min-width: 18rem;
@@ -107,6 +175,7 @@ p
 .signup-login-form > label {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
+    color: #0e2c54;
     margin-top: 0.5rem;
 }
 
@@ -124,7 +193,7 @@ p
     border: 2px solid #ff6cc0; 
 }
 
-.signup-login-form > button  {
+.signup-login-form > button {
     width: fit-content;
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
@@ -143,7 +212,8 @@ p
 /* reviews page */
 .product-review {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 2fr;
+    margin-top: 2rem;
 }
 
 #product-image {
@@ -162,5 +232,94 @@ p
     outline: none;
     border: 1px solid #0e2c54;
     padding: 0.5rem;
+    margin: 0.5rem 0;
+    min-height: 3rem;
     resize: vertical;
+}
+
+.write-review-form > button {
+    width: fit-content;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    color: #0e2c54;
+    background-color: #FFFFFF;
+    padding: 0.5rem 0.75rem;
+    box-shadow: none;
+    border: 2px solid #0e2c54;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.write-review-form > button:hover {
+    color: #FFFFFF;
+    background-color: #0e2c54;
+}
+
+.review-edit-delete-controls {
+    display: flex;
+    flex-direction: row;
+}
+
+#edit-review-button {
+
+}
+
+#delete-review-button {
+    
+}
+
+/* suggest form */
+#suggest-logo {
+    height: 70px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.suggest-form {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 18rem;
+    max-width: 25rem;
+}
+
+.suggest-form > label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: #0e2c54;
+    margin-top: 0.5rem;
+}
+
+.suggest-form > input {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 1.5rem;
+    border: 2px solid #0e2c54;    
+}
+
+.suggest-form > input:focus {
+    outline: none;
+    border: 2px solid #ff6cc0; 
+}
+
+.suggest-form > button {
+    width: fit-content;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 1rem;
+    color: #FFFFFF;
+    background-color: #ff6cc0;
+    padding: 0.5rem 0.75rem;
+    box-shadow: none;
+    border: 0;
+    border-radius: 1.5rem;
+    cursor: pointer;
 }

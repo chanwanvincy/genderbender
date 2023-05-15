@@ -1,7 +1,7 @@
 import psycopg2
 import psycopg2.extras
 
-DB_URL = "dbname=genderbender_db"
+DB_URL = ("DATABASE_URL", "dbname=genderbender_db")
 
 def sql(query, parameters = []):
     connection = psycopg2.connect(DB_URL)

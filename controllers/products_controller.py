@@ -39,10 +39,9 @@ def reviews(id):
 def post_review(id):
     product_id = id
     user_id = session['user_id']
-    review = request.form.get('review')
-    print(number_of_entries(product_id, user_id))
-    if number_of_entries(product_id, user_id) == 0:
-        create_review(product_id, user_id, review)
+    new_review = request.form.get('new_review')
+    # if number_of_entries(product_id, user_id) == 0:
+    create_review(product_id, user_id, new_review)
     # redirect on a POST request
     return redirect(f'/products/{product_id}/reviews')
     
