@@ -40,15 +40,15 @@ def post_review(id):
     product_id = id
     user_id = session['user_id']
     new_review = request.form.get('new_review')
-    # if number_of_entries(product_id, user_id) == 0:
-    create_review(product_id, user_id, new_review)
+    if number_of_entries(product_id, user_id)["count"] == 0:
+        create_review(product_id, user_id, new_review)
     # redirect on a POST request
     return redirect(f'/products/{product_id}/reviews')
     
 def edit_review(id):
     product = get_product(id)
     product_id = id
-    user_id = str(session['user_id'])
+    user_id = session['user_id']
     review = get_review(product_id, user_id)
     return render_template('/products/edit_review.html', product=product, review=review)
 

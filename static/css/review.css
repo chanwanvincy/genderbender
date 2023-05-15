@@ -2,11 +2,12 @@ body {
     margin: 2rem auto;
     align-content: center;
     max-width: 1200px;
+    overflow-y: scroll;
 }
 
 .product-review {
     display: grid;
-    grid-template-columns: auto 2fr;
+    grid-template-columns: auto 1fr;
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -58,4 +59,39 @@ body {
 .review-edit-delete-controls {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+#edit-button {
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #0e2c54;
+    border-radius: 1.5rem;
+}
+
+#edit-button:hover {
+    font-weight: 600;
+    color: #0cc0df;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #0cc0df;
+    border-radius: 1.5rem;
+}
+
+#delete-button {
+    font-size: 1rem; 
+    font-weight: 400;
+    color: #0e2c54;
+    background-color: #FFFFFF;
+    box-shadow: none;
+    border: 1px solid #ff6cc0;
+}
+
+#delete-button:hover {
+    font-size: 1rem; 
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #ff6cc0;
+    box-shadow: none;
+    border: 1px solid #ff6cc0;
 }

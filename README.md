@@ -24,3 +24,6 @@ Initially I built the site allowing any logged in users to be able to add, edit 
 
 ## Potential Future Development
 - Allowing users to upload their images along with review
+- Allowing users to specify the color/ size of product they bought which will be displayed alongside the reviews
+- Adding tags to products so they can be filtered on the landing page
+- Portal for admins to add

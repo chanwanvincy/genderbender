@@ -43,11 +43,9 @@
             <p>{{ review['review'] }}</p>
             {% if current_user['id'] == review['user_id'] %}
             <section class="review-edit-delete-controls">
-                <form action="/products/{{ product['id'] }}/edit_review" method="POST">
-                    <button id="edit-review-button">Edit</button>
-                </form>
-                <form action="/products/{{ product['id'] }}/delete_review"method="POST">
-                    <button id="delete-review-button">Delete</button>
+                <a href="/products/{{ product['id'] }}/edit_review"  id="edit-button">Edit</a>    
+                <form action="/products/{{ product['id'] }}/delete_review"  method="POST">
+                    <button id="delete-button">Delete</button>
                 </form>
             </section>
         {% endif %}
