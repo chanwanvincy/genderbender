@@ -30,7 +30,6 @@
         {% if current_user %}
             <section class="controls">
                 <form action="/products/{{ product['id'] }}/reviews/post" method="POST" class="write-review-form">
-                    <!-- <input type="text" name="review">     -->
                     <label for="new_review">Write your review:</label>
                     <textarea maxlength="1000" name="new_review"></textarea>
                     <button>Post Review</button>
@@ -42,12 +41,15 @@
         {% for review in reviews %}
             <p>{{ review['review'] }}</p>
             {% if current_user['id'] == review['user_id'] %}
+            <section class="review-edit-delete-controls">
                 <form action="/products/{{ product['id'] }}/edit_review" method="POST">
                     <button id="edit-review-button">Edit</button>
                 </form>
                 <form action="/products/{{ product['id'] }}/delete_review"method="POST">
                     <button id="delete-review-button">Delete</button>
                 </form>
+            </section>
+                
                 
             {% endif %}
         {% endfor %}

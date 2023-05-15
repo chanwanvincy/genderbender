@@ -7,11 +7,20 @@ My idea for **GenderBender** is a product review site where community members ca
 
 ## Planning and Problem Solving
 Initially I built the site allowing any logged in users to be able to add, edit and delete products from the site and quickly realised 
-### Landing page
-![Landing page wireframe](/images/wireframe/wireframe-landing.png)
+### Pages
+![Landing page wireframe](/static/images/wireframe/wireframe-landing.png)
+![Log in/ sign up page wireframe](/static/images/wireframe/wireframe-signup_login.png)
+![Product review page wireframe](/static/images/wireframe/wireframe-product_review.png)
+
+### Database table
 
 ## Technologies used
 - Languages - HTML5, CSS3, Python
 - Framework - Flask
 - Deployment - Render
 - Wireframe and Design - Excalidraw, Google Fonts, Canva assets
+
+## Design
+
+## Potential Future Development
+- Allowing users to upload their images along with review
