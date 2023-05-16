@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+
+{% block head %}
+    <title>Add a Product - GenderBender</title>
+    <link rel="stylesheet" href="/static/css/form.css">
+{% endblock %}
+
 {% block content %}
     <a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="logo"></a>
     {% if current_user %}
