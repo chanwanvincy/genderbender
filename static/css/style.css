@@ -60,8 +60,10 @@ h3 {
 }
 
 .nav-right {
-    align-items: center;
-    justify-items: right;
+    display: flex;
+    align-items: baseline;
+    justify-content: right;
+    gap: 1rem;
 }
 
 #sign-up-button {
@@ -69,7 +71,7 @@ h3 {
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     border-radius: 1.5rem;
-    margin: auto 0.5rem auto 0rem;
+    /* margin: auto 0.5rem auto 0rem; */
     cursor: pointer;
     border: 2px solid #0e2c54;
     color: #0e2c54;
@@ -81,7 +83,7 @@ h3 {
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     border-radius: 1.5rem;
-    margin: auto 0.5rem auto 0rem;
+    /* margin: auto 0.5rem auto 0rem; */
     cursor: pointer;
     border: 2px solid #0e2c54;
     color: #FFFFFF;
@@ -94,7 +96,7 @@ h3 {
     padding: 0.5rem 0.75rem;
     border: 2px solid #ff6cc0;
     border-radius: 1.5rem;
-    margin: auto 0.5rem auto 0rem;
+    /* margin: auto 0.5rem auto 0rem; */
     color: #FFFFFF;
     background-color: #ff6cc0;
     cursor: pointer;
