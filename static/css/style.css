@@ -68,13 +68,12 @@ h3 {
 .nav-right > .in-session {
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
-.nav-right > form {
+.nav-right > .in-session > form {
     margin-bottom: 0;
 }
-
-
 
 #sign-up-button {
     font-weight: 600;
