@@ -37,6 +37,8 @@ INSERT INTO reviews(product_id, user_id, review) VALUES
     ('1', '1', 'My first review');
 
 
+
+
 -- is combination of product_id and user_id connected to an existing review id? (users can only submit 1 review per product)
 
 SELECT COUNT(*) FROM reviews WHERE product_id=1 AND user_id=1 ;
