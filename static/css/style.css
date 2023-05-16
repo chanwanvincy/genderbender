@@ -65,9 +65,16 @@ h3 {
     gap: 1rem;
 }
 
+.nav-right > .in-session {
+    display: flex;
+    gap: 1rem;
+}
+
 .nav-right > form {
     margin-bottom: 0;
 }
+
+
 
 #sign-up-button {
     font-weight: 600;
