@@ -99,6 +99,7 @@ h3 {
 
 #log-out-button {
     font-weight: 600;
+    font-size: 1rem;
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     border: 2px solid #ff6cc0;
@@ -143,6 +144,18 @@ h3 {
     margin-top: 1.5rem;
     color: #0e2c54;
     background-color: #ffbd59;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+#review-button:hover {
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    color: #FFFFFF;
+    background-color: #0cc0df;
     padding: 0.5rem 0.75rem;
     border-radius: 1.5rem;
     cursor: pointer;
@@ -156,13 +169,13 @@ h3 {
 
 #add-suggest-button {
     width: fit-content;
-    font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
     margin-top: 2rem;
     color: #FFFFFF;
     background-color: #ff6cc0;
+    margin-top: 0.5rem;
     padding: 0.5rem 0.75rem;
     box-shadow: none;
     border: 0;
