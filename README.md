@@ -3,6 +3,7 @@
 Live site here: https://genderbender.onrender.com
 
 To experience the functionalities of the site without signing up, you can use the guest login:
+
 Email - `guest`
 Password - `password`
 
@@ -41,7 +42,7 @@ Since I removed the controls for users to add and remove products from the galle
 - Wireframe and Design - Excalidraw, Google Fonts, Canva assets
 
 ## Design
-![genderbender logo](/static/images/genderbender-logo-whiteBG-narrow.png)
+![genderbender logotype inspiration](/static/images/logotype-inspo.png)
 
 The genderbender logo comprises of three colors (mustard, turquoise, and pink) and three shapes (circle, triangle, square). The three colors are a spin on the primary colors (yellow, blue, red). Whereas the three shapes are a deconstruction of the shapes used to convey "male" and "female" on bathroom signs, and somewhat reminiscent of shapes in kids wooden block toys.
 
