@@ -28,6 +28,7 @@ The final deliverable diverged slightly from the wireframe in that the sign up a
 ![Product review page screenshot](/static/images/screenshots/reviews.png)
 #### Add suggestion
 Since I removed the controls for users to add and remove products from the gallery, I added a form so people can submit products they would like to see added to the main page. This is so that the site owner can crowdsource product information and availability from the community, and members can in turn learn about offerings from boutique brands.
+
 ![Add suggestion page screenshot](/static/images/screenshots/suggest.png)
 
 ### Table Relations
@@ -41,6 +42,7 @@ Since I removed the controls for users to add and remove products from the galle
 
 ## Design
 ![genderbender logo](/static/images/genderbender-logo-whiteBG-narrow.png)
+
 The genderbender logo comprises of three colors (mustard, turquoise, and pink) and three shapes (circle, triangle, square). The three colors are a spin on the primary colors (yellow, blue, red). Whereas the three shapes are a deconstruction of the shapes used to convey "male" and "female" on bathroom signs, and somewhat reminiscent of shapes in kids wooden block toys.
 
 I see sex, gender and gender expression as things we have yet to deconstruct in society, but it doesn't mean we can't have a bit of fun in the process!
