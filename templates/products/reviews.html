@@ -6,50 +6,54 @@
 {% endblock %}
 
 {% block content %}
-
-<a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="logo"></a>
-
-{% if current_user %}
-    <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
-
-    <section class="controls">
-        <form action="/sessions/delete" method="POST">
-            <button id="log-out-button">Log out</button>
-        </form>
-    </section>
-
-{% else %}
-    <a href="/users/new" id="sign-up-button">Sign up</a>
-    <a href="/sessions/new" id="log-in-button">Log in</a>
-{% endif %}
-
-<section class="product-review">
-    <section>
-        <img src="{{  product['image_url']  }}" alt="" id="product-image">
-        <h2>{{ product['product_name'] }}</h2>
-        <h3>{{ product['brand'] }}</h3>
-        {% if current_user %}
-            <section class="controls">
-                <form action="/products/{{ product['id'] }}/reviews/post" method="POST" class="write-review-form">
-                    <label for="new_review">Write your review:</label>
-                    <textarea maxlength="1000" name="new_review"></textarea>
-                    <button>Post Review</button>
+    <section class="nav">
+        <section class="nav-left">
+            <a href="/products"><img src="/static/images/genderbender-logo.png" alt="" id="logo"></a>
+        </section>
+        <section class="nav-right">
+            {% if current_user %}
+            <section class="in-session">
+                <h3>You're a GenderBender, {{ current_user['first_name'] }}</h3>
+            
+                <form action="/sessions/delete" method="POST">
+                        <button id="log-out-button">Log out</button>
                 </form>
             </section>
-        {% endif %}
+                
+            {% else %}
+                <a href="/users/new" class="button" id="sign-up-button">Sign up</a>
+                <a href="/sessions/new" class="button" id="log-in-button">Log in</a>
+            {% endif %}
+        </section>
     </section>
-    <section class="reviews">
-        {% for review in reviews %}
-            <p>{{ review['review'] }}</p>
-            {% if current_user['id'] == review['user_id'] %}
-            <section class="review-edit-delete-controls">
-                <a href="/products/{{ product['id'] }}/edit_review"  id="edit-button">Edit</a>    
-                <form action="/products/{{ product['id'] }}/delete_review"  method="POST">
-                    <button id="delete-button">Delete</button>
-                </form>
-            </section>
-        {% endif %}
-        {% endfor %}
-    </section>
+
+    <section class="product-review">
+        <section>
+            <img src="{{  product['image_url']  }}" alt="" id="product-image">
+            <h2>{{ product['product_name'] }}</h2>
+            <h3>{{ product['brand'] }}</h3>
+            {% if current_user %}
+                <section class="controls">
+                    <form action="/products/{{ product['id'] }}/reviews/post" method="POST" class="write-review-form">
+                        <label for="new_review">Write your review:</label>
+                        <textarea maxlength="1000" name="new_review"></textarea>
+                        <button>Post Review</button>
+                    </form>
+                </section>
+            {% endif %}
+        </section>
+        <section class="reviews">
+            {% for review in reviews %}
+                <p>{{ review['review'] }}</p>
+                {% if current_user['id'] == review['user_id'] %}
+                <section class="review-edit-delete-controls">
+                    <a href="/products/{{ product['id'] }}/edit_review"  id="edit-button">Edit</a>    
+                    <form action="/products/{{ product['id'] }}/delete_review"  method="POST">
+                        <button id="delete-button">Delete</button>
+                    </form>
+                </section>
+            {% endif %}
+            {% endfor %}
+        </section>
 
 {% endblock %}
